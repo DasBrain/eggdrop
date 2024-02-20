@@ -139,13 +139,13 @@ static tcl_strings dnsstrings[] = {
 };
 
 static char *dns_change(ClientData cdata, Tcl_Interp *irp,
-                           EGG_CONST char *name1,
-                           EGG_CONST char *name2, int flags)
+                           const char *name1,
+                           const char *name2, int flags)
 {
   char buf[sizeof dns_servers], *p;
   unsigned short port;
   int i, lc, code;
-  EGG_CONST char **list, *slist;
+  const char **list, *slist;
 
   if (flags & (TCL_TRACE_READS | TCL_TRACE_UNSETS)) {
     Tcl_DString ds;

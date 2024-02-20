@@ -146,8 +146,8 @@ typedef struct {
  */
 /* Read/write integer couplets (int1:int2) */
 static char *tcl_eggcouplet(ClientData cdata, Tcl_Interp *irp,
-                            EGG_CONST char *name1,
-                            EGG_CONST char *name2, int flags)
+                            const char *name1,
+                            const char *name2, int flags)
 {
   char *s, s1[41];
   coupletinfo *cp = (coupletinfo *) cdata;
@@ -180,8 +180,8 @@ static char *tcl_eggcouplet(ClientData cdata, Tcl_Interp *irp,
 /* Read or write normal integer.
  */
 static char *tcl_eggint(ClientData cdata, Tcl_Interp *irp,
-                        EGG_CONST char *name1,
-                        EGG_CONST char *name2, int flags)
+                        const char *name1,
+                        const char *name2, int flags)
 {
   char *s, s1[40];
   long l;
@@ -255,8 +255,8 @@ static char *tcl_eggint(ClientData cdata, Tcl_Interp *irp,
 /* Read/write normal string variable
  */
 static char *tcl_eggstr(ClientData cdata, Tcl_Interp *irp,
-                        EGG_CONST char *name1,
-                        EGG_CONST char *name2, int flags)
+                        const char *name1,
+                        const char *name2, int flags)
 {
   char *s;
   strinfo *st = (strinfo *) cdata;
@@ -1080,7 +1080,7 @@ void do_tcl(char *whatzit, char *script)
 int readtclprog(char *fname)
 {
   int code;
-  EGG_CONST char *result;
+  const char *result;
   Tcl_DString dstr;
 
   if (!file_readable(fname))

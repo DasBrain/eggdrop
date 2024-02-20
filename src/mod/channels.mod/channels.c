@@ -734,12 +734,12 @@ static int channels_expmem()
 }
 
 static char *traced_globchanset(ClientData cdata, Tcl_Interp *irp,
-                                EGG_CONST char *name1,
-                                EGG_CONST char *name2, int flags)
+                                const char *name1,
+                                const char *name2, int flags)
 {
   Tcl_Size i, items;
   char *t, *s;
-  EGG_CONST char **item, *s2;
+  const char **item, *s2;
 
   if (flags & (TCL_TRACE_READS | TCL_TRACE_UNSETS)) {
     Tcl_SetVar2(interp, name1, name2, glob_chanset, TCL_GLOBAL_ONLY);

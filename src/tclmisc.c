@@ -198,7 +198,7 @@ static int tcl_binds STDVAR
 {
   int matching = 0;
   char *g, flg[100], hits[11];
-  EGG_CONST char *list[5];
+  const char *list[5];
   tcl_bind_list_t *tl, *tl_kind;
   tcl_bind_mask_t *tm;
   tcl_cmd_t *tc;
@@ -589,7 +589,7 @@ static int tcl_modules STDVAR
 {
   int i;
   char *p, s[24], s2[24];
-  EGG_CONST char *list[100], *list2[2];
+  const char *list[100], *list2[2];
   dependancy *dep;
   module_entry *current;
 

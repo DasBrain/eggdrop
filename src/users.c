@@ -1122,7 +1122,7 @@ void autolink_cycle(char *start)
     botlink("", -3, autc->handle);      /* try autoconnect */
 }
 
-char *traced_remove_pass(ClientData cd, Tcl_Interp *irp, EGG_CONST char *name1, EGG_CONST char *name2, int flags)
+char *traced_remove_pass(ClientData cd, Tcl_Interp *irp, const char *name1, const char *name2, int flags)
 {
   const char *value;
 

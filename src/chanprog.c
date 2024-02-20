@@ -669,7 +669,7 @@ void wipe_timers(Tcl_Interp *irp, tcl_timer_t **stack)
 void list_timers(Tcl_Interp *irp, tcl_timer_t *stack)
 {
   char mins[11], count[11], *x;
-  EGG_CONST char *argv[4];
+  const char *argv[4];
   tcl_timer_t *mark;
 
   for (mark = stack; mark; mark = mark->next) {

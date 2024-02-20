@@ -1457,10 +1457,10 @@ static int monitor_2char STDVAR
 /* Read/write normal string variable.
  */
 static char *nick_change(ClientData cdata, Tcl_Interp *irp,
-                         EGG_CONST char *name1,
-                         EGG_CONST char *name2, int flags)
+                         const char *name1,
+                         const char *name2, int flags)
 {
-  EGG_CONST char *new;
+  const char *new;
 
   if (flags & (TCL_TRACE_READS | TCL_TRACE_UNSETS)) {
     Tcl_SetVar2(interp, name1, name2, origbotname, TCL_GLOBAL_ONLY);
@@ -1510,8 +1510,8 @@ static char *get_altbotnick(void)
 }
 
 static char *altnick_change(ClientData cdata, Tcl_Interp *irp,
-                            EGG_CONST char *name1,
-                            EGG_CONST char *name2, int flags)
+                            const char *name1,
+                            const char *name2, int flags)
 {
   /* Always unset raltnick. Will be regenerated when needed. */
   raltnick[0] = 0;
@@ -1519,8 +1519,8 @@ static char *altnick_change(ClientData cdata, Tcl_Interp *irp,
 }
 
 static char *traced_serveraddress(ClientData cdata, Tcl_Interp *irp,
-                                  EGG_CONST char *name1,
-                                  EGG_CONST char *name2, int flags)
+                                  const char *name1,
+                                  const char *name2, int flags)
 {
   char s[1024];
 
@@ -1545,8 +1545,8 @@ static char *traced_serveraddress(ClientData cdata, Tcl_Interp *irp,
 }
 
 static char *traced_server(ClientData cdata, Tcl_Interp *irp,
-                           EGG_CONST char *name1,
-                           EGG_CONST char *name2, int flags)
+                           const char *name1,
+                           const char *name2, int flags)
 {
   char s[1024];
 
@@ -1572,8 +1572,8 @@ static char *traced_server(ClientData cdata, Tcl_Interp *irp,
 }
 
 static char *traced_botname(ClientData cdata, Tcl_Interp *irp,
-                            EGG_CONST char *name1,
-                            EGG_CONST char *name2, int flags)
+                            const char *name1,
+                            const char *name2, int flags)
 {
   char s[1024];
 
@@ -1646,8 +1646,8 @@ static void do_nettype(void)
 }
 
 static char *traced_nettype(ClientData cdata, Tcl_Interp *irp,
-                            EGG_CONST char *name1,
-                            EGG_CONST char *name2, int flags)
+                            const char *name1,
+                            const char *name2, int flags)
 {
   int warn = 0;
 
@@ -1709,8 +1709,8 @@ static char *traced_nettype(ClientData cdata, Tcl_Interp *irp,
 }
 
 static char *traced_nicklen(ClientData cdata, Tcl_Interp *irp,
-                            EGG_CONST char *name1,
-                            EGG_CONST char *name2, int flags)
+                            const char *name1,
+                            const char *name2, int flags)
 {
   if (flags & (TCL_TRACE_READS | TCL_TRACE_UNSETS)) {
     char s[40];
@@ -1721,7 +1721,7 @@ static char *traced_nicklen(ClientData cdata, Tcl_Interp *irp,
       Tcl_TraceVar(irp, name1, TCL_TRACE_READS | TCL_TRACE_WRITES |
                    TCL_TRACE_UNSETS, traced_nicklen, cdata);
   } else {
-    EGG_CONST char *cval = Tcl_GetVar2(interp, name1, name2, TCL_GLOBAL_ONLY);
+    const char *cval = Tcl_GetVar2(interp, name1, name2, TCL_GLOBAL_ONLY);
     long lval = 0;
 
     if (cval && Tcl_ExprLong(interp, cval, &lval) != TCL_ERROR) {
@@ -1806,13 +1806,13 @@ static tcl_ints my_tcl_ints[] = {
  */
 
 static char *tcl_eggserver(ClientData cdata, Tcl_Interp *irp,
-                           EGG_CONST char *name1,
-                           EGG_CONST char *name2, int flags)
+                           const char *name1,
+                           const char *name2, int flags)
 {
   Tcl_Size lc, i;
   int code;
   char x[1024];
-  EGG_CONST char **list, *slist;
+  const char **list, *slist;
   struct server_list *q;
   Tcl_DString ds;
 
@@ -2392,7 +2392,7 @@ static Function server_table[] = {
 
 char *server_start(Function *global_funcs)
 {
-  EGG_CONST char *s;
+  const char *s;
 
   global = global_funcs;
 

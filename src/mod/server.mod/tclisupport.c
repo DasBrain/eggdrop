@@ -150,8 +150,8 @@ static int tcl_isupport_unset STDOBJVAR
 #endif
 
 char *traced_isupport(ClientData cdata, Tcl_Interp *irp,
-                            EGG_CONST char *name1,
-                            EGG_CONST char *name2, int flags)
+                            const char *name1,
+                            const char *name2, int flags)
 {
   if (flags & (TCL_TRACE_READS | TCL_TRACE_UNSETS)) {
     Tcl_SetVar2(interp, name1, name2, isupport_default, TCL_GLOBAL_ONLY);
@@ -178,7 +178,7 @@ char *traced_isupport(ClientData cdata, Tcl_Interp *irp,
       Tcl_TraceVar(irp, name1, TCL_TRACE_READS | TCL_TRACE_WRITES |
                    TCL_TRACE_UNSETS, traced_isupport, cdata);
   } else {
-    EGG_CONST char *cval = Tcl_GetVar2(interp, name1, name2, TCL_GLOBAL_ONLY);
+    const char *cval = Tcl_GetVar2(interp, name1, name2, TCL_GLOBAL_ONLY);
     isupport_clear_values(1);
     isupport_parse(cval, isupport_setdefault);
   }

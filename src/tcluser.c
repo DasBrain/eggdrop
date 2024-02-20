@@ -612,7 +612,7 @@ static int tcl_killignore STDVAR
 static int tcl_ignorelist STDVAR
 {
   char expire[21], added[21], *p;
-  EGG_CONST char *list[5];
+  const char *list[5];
   struct igrec *i;
 
   BADARGS(1, 1, "");

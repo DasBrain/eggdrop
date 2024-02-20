@@ -826,7 +826,7 @@ static int tcl_newinvite STDVAR
 static int tcl_channel_info(Tcl_Interp *irp, struct chanset_t *chan)
 {
   char a[121], b[121], s[121];
-  EGG_CONST char *args[2];
+  const char *args[2];
   struct udef_struct *ul;
 
   get_mode_protect(chan, s);
@@ -1012,7 +1012,7 @@ static int tcl_channel_info(Tcl_Interp *irp, struct chanset_t *chan)
 static int tcl_channel_getlist(Tcl_Interp *irp, struct chanset_t *chan)
 {
   char s[121], *str;
-  EGG_CONST char **argv = NULL;
+  const char **argv = NULL;
   Tcl_Size argc = 0;
   struct udef_struct *ul;
 
@@ -1132,7 +1132,7 @@ static int tcl_channel_get(Tcl_Interp *irp, struct chanset_t *chan,
                            char *setting)
 {
   char s[121], *str = NULL;
-  EGG_CONST char **argv = NULL;
+  const char **argv = NULL;
   Tcl_Size argc = 0;
   struct udef_struct *ul;
 
@@ -1720,7 +1720,7 @@ static int tcl_channel_modify(Tcl_Interp *irp, struct chanset_t *chan,
 static int tcl_do_masklist(maskrec *m, Tcl_Interp *irp)
 {
   char ts[21], ts1[21], ts2[21], *p;
-  EGG_CONST char *list[6];
+  const char *list[6];
 
   for (; m; m = m->next) {
     list[0] = m->mask;
@@ -2093,7 +2093,7 @@ static int tcl_channel_add(Tcl_Interp *irp, char *newname, char *options)
   int ret = TCL_OK;
   int join = 0;
   char buf[2048], buf2[256];
-  EGG_CONST char **item;
+  const char **item;
   struct chanset_t *chan;
 
   if (!newname || !newname[0] || (strchr(CHANMETA, newname[0]) == NULL)) {

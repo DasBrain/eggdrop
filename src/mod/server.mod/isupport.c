@@ -55,7 +55,7 @@ static int hexdigit2dec[128] = {
 int tcl_isupport STDOBJVAR;
 int isupport_bind STDVAR;
 int check_tcl_isupport(struct isupport *data, const char *key, const char *value);
-char *traced_isupport(ClientData cdata, Tcl_Interp *irp, EGG_CONST char *name1, EGG_CONST char *name2, int flags);
+char *traced_isupport(ClientData cdata, Tcl_Interp *irp, const char *name1, const char *name2, int flags);
 
 static tcl_cmds my_tcl_objcmds[] = {
   {"isupport", tcl_isupport},

@@ -629,7 +629,7 @@ static int tcl_bots STDVAR
 static int tcl_botlist STDVAR
 {
   char *p, sh[2], string[20];
-  EGG_CONST char *list[4];
+  const char *list[4];
   tand_t *bot;
 
   BADARGS(1, 1, "");
@@ -652,7 +652,7 @@ static int tcl_botlist STDVAR
 static void build_dcc_list(Tcl_Interp *irp, char *idxstr, char *nick, char *host,
             char *portstring, char *type, char *other, char *timestamp) {
   char *p;
-  EGG_CONST char *list[7];
+  const char *list[7];
 
   list[0] = idxstr;
   list[1] = nick;
@@ -670,7 +670,7 @@ static void build_dcc_list(Tcl_Interp *irp, char *idxstr, char *nick, char *host
 static void build_sock_list(Tcl_Interp *irp, Tcl_Obj *masterlist, char *idxstr,
             char *nick, char *host, char *ip, int port, int secure,
             char *type, char *other, char *timestamp) {
-  EGG_CONST char *val[] = {"idx", "handle", "host", "ip", "port", "secure",
+  const char *val[] = {"idx", "handle", "host", "ip", "port", "secure",
                            "type", "info", "time"};
   Tcl_Obj *thelist;
   char securestr[2], portstr[6];
@@ -785,7 +785,7 @@ static int tcl_whom STDVAR
 {
   int chan, i;
   char c[2], idle[21], work[20], *p;
-  EGG_CONST char *list[7];
+  const char *list[7];
 
   BADARGS(2, 2, " chan");
 

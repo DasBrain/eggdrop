@@ -1192,7 +1192,7 @@ static void cmd_mns_chrec(struct userrec *u, int idx, char *par)
 static void cmd_pls_chan(struct userrec *u, int idx, char *par)
 {
   Tcl_Size i, argc;
-  EGG_CONST char **argv;
+  const char **argv;
   char *chname;
   struct chanset_t *chan;
 

@@ -665,7 +665,7 @@ static int tcl_notes STDVAR
 {
   int count, read, nl[128]; /* Is it enough? */
   char s[601], *to, *from, *dt, *s1, *p;
-  EGG_CONST char *list[3];
+  const char *list[3];
   FILE *f;
 
   BADARGS(2, 3, " handle ?noteslist#?");

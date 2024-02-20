@@ -52,8 +52,6 @@
 #  define TCL_PATCH_LEVEL "*unknown*"
 #endif
 
-#define EGG_CONST const
-
 #ifdef CONST86
 #  define TCL_CONST86 CONST86
 #else

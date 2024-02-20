@@ -1704,7 +1704,7 @@ int findsock(int sock)
 
 /* Trace on my-ip and my-hostname variable to handle transition into vhost4/vhost6/listen-addr.
  */
-char *traced_myiphostname(ClientData cd, Tcl_Interp *irp, EGG_CONST char *name1, EGG_CONST char *name2, int flags)
+char *traced_myiphostname(ClientData cd, Tcl_Interp *irp, const char *name1, const char *name2, int flags)
 {
   const char *value;
 
@@ -1726,8 +1726,8 @@ char *traced_myiphostname(ClientData cd, Tcl_Interp *irp, EGG_CONST char *name1,
   return NULL;
 }
 
-char *traced_natip(ClientData cd, Tcl_Interp *irp, EGG_CONST char *name1,
-                   EGG_CONST char *name2, int flags)
+char *traced_natip(ClientData cd, Tcl_Interp *irp, const char *name1,
+                   const char *name2, int flags)
 {
   const char *value;
   int r;

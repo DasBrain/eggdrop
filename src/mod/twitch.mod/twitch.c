@@ -96,8 +96,8 @@ static void remove_chars(char* str, char c) {
     *pw = '\0';
 }
 
-char *traced_keepnick(ClientData cd, Tcl_Interp *irp, EGG_CONST char *name1,
-                   EGG_CONST char *name2, int flags)
+char *traced_keepnick(ClientData cd, Tcl_Interp *irp, const char *name1,
+                   const char *name2, int flags)
 {
   const char *value;
 

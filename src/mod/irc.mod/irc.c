@@ -1290,16 +1290,16 @@ static void do_nettype()
 }
 
 static char *traced_nettype(ClientData cdata, Tcl_Interp *irp,
-                            EGG_CONST char *name1,
-                            EGG_CONST char *name2, int flags)
+                            const char *name1,
+                            const char *name2, int flags)
 {
   do_nettype();
   return NULL;
 }
 
 static char *traced_rfccompliant(ClientData cdata, Tcl_Interp *irp,
-                                 EGG_CONST char *name1,
-                                 EGG_CONST char *name2, int flags)
+                                 const char *name1,
+                                 const char *name2, int flags)
 {
   /* This hook forces eggdrop core to change the rfc_ match function
    * links to point to the rfc compliant versions if rfc_compliant

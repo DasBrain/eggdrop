@@ -287,7 +287,7 @@ static void dns_tcl_iporhostres(sockname_t *ip, char *hostn, int ok, void *other
   Tcl_DStringAppendElement(&list, ok ? "1" : "0");
 
   if (tclinfo->paras) {
-    EGG_CONST char *argv[2];
+    const char *argv[2];
     char *output;
 
     argv[0] = Tcl_DStringValue(&list);

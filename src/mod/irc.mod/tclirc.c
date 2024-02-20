@@ -616,7 +616,7 @@ static int tcl_getchanidle STDVAR
 static int tcl_chanmasks(masklist *m, Tcl_Interp *irp)
 {
   char work[21], *p;
-  EGG_CONST char *list[3];
+  const char *list[3];
 
   for (; m && m->mask && m->mask[0]; m = m->next) {
     list[0] = m->mask;

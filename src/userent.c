@@ -1038,7 +1038,7 @@ static void xtra_display(int idx, struct user_entry *e)
 {
   int code;
   Tcl_Size lc, j;
-  EGG_CONST char **list;
+  const char **list;
   struct xtra_key *xk;
 
   code = Tcl_SplitList(interp, whois_fields, &lc, &list);
